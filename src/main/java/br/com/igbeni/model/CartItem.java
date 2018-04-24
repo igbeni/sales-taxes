@@ -23,26 +23,6 @@ public class CartItem {
         this.type = type;
     }
 
-    public String getProductName() {
-        return productName;
-    }
-
-    public BigDecimal getProductPrice() {
-        return productPrice;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public boolean isImported() {
-        return imported;
-    }
-
-    public ProductType getType() {
-        return type;
-    }
-
     public static CartItem fromString(String s, ProductRepository repository) {
         Matcher matcher = Pattern.compile(PATTERN).matcher(s);
 
@@ -64,5 +44,25 @@ public class CartItem {
         }
 
         return null;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public BigDecimal getProductPrice() {
+        return productPrice;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public boolean isImported() {
+        return imported;
+    }
+
+    public ProductType getType() {
+        return type;
     }
 }

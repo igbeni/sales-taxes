@@ -33,6 +33,12 @@ public class Receipt {
         return items;
     }
 
+    public void clear() {
+        this.total = BigDecimal.ZERO;
+        this.salesTaxes = BigDecimal.ZERO;
+        this.items = new ArrayList<>();
+    }
+
     public void add(CartItem cartItem) {
         Tax tax = taxPolicy.forItem(cartItem);
 

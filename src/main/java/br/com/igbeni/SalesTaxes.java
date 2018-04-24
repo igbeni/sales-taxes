@@ -6,8 +6,6 @@ import br.com.igbeni.repository.ProductRepository;
 import br.com.igbeni.tax.TaxPolicy;
 import br.com.igbeni.utils.Utils;
 
-import javax.rmi.CORBA.Util;
-
 public class SalesTaxes {
 
     private final ProductRepository repository;
@@ -24,6 +22,10 @@ public class SalesTaxes {
     }
 
     public String completedSale() {
-        return Utils.format(receipt);
+        String result = Utils.format(receipt);
+
+        receipt.clear();
+
+        return result;
     }
 }
